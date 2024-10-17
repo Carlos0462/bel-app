@@ -28,7 +28,6 @@ export default function RootLayout({ children }) {
         className="h-screen w-full  flex flex-col"
         style={{
           background: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
-          height: "100vh", // Ajusta según tus necesidades
         }}
       >
         {children}
