@@ -62,12 +62,8 @@ export default function Page() {
   return (
     <div
       className="w-full h-full flex flex-row"
-      style={{
-        background: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
-        height: "100vh", // Ajusta según tus necesidades
-      }}
     >
-      {images.map((image, index) => (
+      {/* {images.map((image, index) => (
         <div key={index} className="w-1/2 h-full relative">
           <Image
             src={image.src}
@@ -98,7 +94,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
