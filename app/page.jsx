@@ -1,19 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useThemeColor } from "./ThemeColorContext";
 
 export default function Page() {
-  const setThemeColor = useThemeColor();
   const [overlayImage, setOverlayImage] = useState(null);
   const [isExiting, setIsExiting] = useState(false);
   const [pendingImage, setPendingImage] = useState(null);
-
-  useEffect(() => {
-    setThemeColor("#003366"); // Cambia este color según la pantalla
-
-    return () => clearTimeout(timer); // Limpia el temporizador al desmontar el componente
-  }, [setThemeColor]);
 
   useEffect(() => {
     if (overlayImage && pendingImage) {
@@ -68,7 +60,13 @@ export default function Page() {
   ];
 
   return (
-    <div className="w-full h-full flex flex-row">
+    <div
+      className="w-full h-full flex flex-row"
+      style={{
+        background: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
+        height: "100vh", // Ajusta según tus necesidades
+      }}
+    >
       {images.map((image, index) => (
         <div key={index} className="w-1/2 h-full relative">
           <Image

@@ -1,6 +1,5 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { ThemeColorProvider } from "./ThemeColorContext";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -23,7 +22,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icons/icon-512x512.png" type="image/png" />
       </head>
       <body className="h-screen bg-[#DFDFDF] flex flex-col">
-        <ThemeColorProvider>{children}</ThemeColorProvider>
+        {children}
       </body>
     </html>
   );
