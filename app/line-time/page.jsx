@@ -12,8 +12,8 @@ export default function Page() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push('/target-page'); // Redirige a la página deseada
-    }, 3000); // Espera 3 segundos antes de redirigir
+      router.push('/line-time/carousel-time'); // Redirige a la página deseada
+    }, 10000); // Espera 3 segundos antes de redirigir
 
     return () => clearTimeout(timer); // Limpia el timeout si el componente se desmonta
   }, [router]);
