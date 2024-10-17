@@ -14,17 +14,10 @@
   }
 }
 
-html, body {
-  height: 100%; /* Asegura que html y body ocupen todo el viewport */
-  margin: 0; /* Elimina márgenes predeterminados */
-  padding: 0; /* Elimina padding predeterminados */
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh; /* Asegura que el body cubra al menos el 100% del viewport */
 }
 
 @layer utilities {
@@ -32,6 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
 
 @keyframes fade-in {
   from {

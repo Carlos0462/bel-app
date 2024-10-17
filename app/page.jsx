@@ -2,17 +2,21 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useThemeColor } from "./ThemeColorContext";
+import { ColorContext } from "./ColorContext";
+import { useRouter } from "next/navigation";
+import { useContext } from 'react';
 
 export default function Page() {
-  /*   const setThemeColor = useThemeColor(); */
+  const setThemeColor = useThemeColor();
   const [overlayImage, setOverlayImage] = useState(null);
   const [isExiting, setIsExiting] = useState(false);
   const [pendingImage, setPendingImage] = useState(null);
+  const { setColor } = useContext(ColorContext);
+  const router = useRouter();
 
-  /*   useEffect(() => {
+  useEffect(() => {
     setThemeColor("#C4E7C2"); // Cambia este color según la pantalla
-
-  }, [setThemeColor]); */
+  }, [setThemeColor]);
 
   useEffect(() => {
     if (overlayImage && pendingImage) {
@@ -21,13 +25,17 @@ export default function Page() {
         const userConfirmed = window.confirm(pendingImage.question);
         if (!userConfirmed) {
           setOverlayImage(null);
+        } else {
+          console.log(pendingImage.color); // Muestra el color seleccionado en la consola
+          setColor(pendingImage.color); // Almacena el color seleccionado
+          router.push("/home"); // Navega a la siguiente
         }
         setPendingImage(null);
       }, 300); // Duración del retardo para que se muestre el overlay antes de la alerta
 
       return () => clearTimeout(timer); // Limpia el timeout si el componente se desmonta
     }
-  }, [overlayImage, pendingImage]);
+  }, [overlayImage, pendingImage, setColor, router]);
 
   const handleImageClick = (imageData) => {
     if (overlayImage) {
@@ -57,12 +65,14 @@ export default function Page() {
       title: "Taylor Swift",
       description: "Se elegirá tus colores en base a tu elección",
       question: "¿Quieres elegir a Taylor Swift?",
+      color: "#EE6DB4",
     },
     {
       src: "/images/Ferxxo.svg",
       title: "Ferxxo",
       description: "Se elegirá tus colores en base a tu elección",
       question: "¿Quieres elegir a Ferxxo?",
+      color: "#0A9900",
     },
   ];
 
