@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icons/icon-512x512.png" type="image/png" />
       </head>
       <body
-        className="h-screen w-full  flex flex-col"
+        className="min-h-screen w-full flex flex-col"
         style={{
           background: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
         }}
