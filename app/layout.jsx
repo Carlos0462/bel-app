@@ -23,14 +23,10 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/icons/icon-512x512.png" type="image/png" />
       </head>
-      <body
-        className="h-screen bg-[#DFDFDF] flex flex-col"
-      >
-        <ThemeColorProvider>
+      <body className="h-screen bg-[#DFDFDF] flex flex-col">
         <ColorProvider>
-        {children}
+          <ThemeColorProvider>{children}</ThemeColorProvider>
         </ColorProvider>
-        </ThemeColorProvider>
       </body>
     </html>
   );

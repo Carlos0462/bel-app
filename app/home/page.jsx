@@ -4,15 +4,21 @@ import { ColorContext } from "../ColorContext";
 import { useEffect } from "react";
 import { useThemeColor } from "../ThemeColorContext";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const { color } = useContext(ColorContext);
   const setThemeColor = useThemeColor();
-  console.log(color);
+  const router = useRouter();
 
   useEffect(() => {
     setThemeColor(color); // Cambia este color según la pantalla
   }, [setThemeColor, color]);
+
+
+  const handleClick = () => {
+    router.push('/line-time'); // Redirige a la página deseada
+  };
 
   return (
     <div
@@ -25,6 +31,7 @@ export default function Page() {
           alt="Image 1"
           layout="fill"
           objectFit="contain"
+          priority={true}
         />
       </div>
       <div className="relative">
@@ -33,6 +40,7 @@ export default function Page() {
           alt="Image 2"
           layout="fill"
           objectFit="contain"
+          priority={true}
         />
       </div>
       <div className="relative">
@@ -41,6 +49,7 @@ export default function Page() {
           alt="Image 3"
           layout="fill"
           objectFit="contain"
+          priority={true}
         />
       </div>
       <div className="relative">
@@ -49,6 +58,7 @@ export default function Page() {
           alt="Image 3"
           layout="fill"
           objectFit="contain"
+          priority={true}
         />
       </div>
       <div className="relative">
@@ -57,6 +67,7 @@ export default function Page() {
           alt="Image 4"
           layout="fill"
           objectFit="contain"
+          priority={true}
         />
       </div>
       <div className="relative">
@@ -65,6 +76,7 @@ export default function Page() {
           alt="Image 5"
           layout="fill"
           objectFit="contain"
+          priority={true}
         />
       </div>
       <div
@@ -74,10 +86,11 @@ export default function Page() {
         <div className="text-4xl text-white font-bold">Hola, Bel</div>
       </div>
       <div
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center cursor-pointer transition-transform transform hover:scale-105 shadow-lg"
         style={{ top: "-25%" }}
+        onClick={handleClick}
       >
-        <Image src="/images/Gato_Pata.svg" alt="Logo" width={60} height={60} />
+        <Image src="/images/Gato_Pata.svg" alt="Logo" width={60} height={60}  priority={true}/>
       </div>
     </div>
   );
