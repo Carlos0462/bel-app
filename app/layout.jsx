@@ -18,10 +18,19 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <link rel="icon" href="/icons/icon-512x512.png" type="image/png" />
       </head>
-      <body className="h-screen bg-[#DFDFDF] flex flex-col">
+      <body
+        className="h-screen  flex flex-col"
+        style={{
+          background: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
+          height: "100vh", // Ajusta según tus necesidades
+        }}
+      >
         {children}
       </body>
     </html>
