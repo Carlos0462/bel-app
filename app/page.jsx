@@ -10,7 +10,7 @@ export default function Page() {
   const [pendingImage, setPendingImage] = useState(null);
 
   useEffect(() => {
-    setThemeColor("#C2D5F0"); // Cambia este color según la pantalla
+    setThemeColor("#C4E7C2"); // Cambia este color según la pantalla
 
   }, [setThemeColor]);
 
