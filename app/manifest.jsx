@@ -1,7 +1,7 @@
 export default function manifest() {
     return {
-      name: 'Bel´s Birthday ',
-      short_name: 'Bel Party',
+      name: 'Bel´s Birthday',
+      short_name: 'Bel´s Birthday',
       description: 'Una App para mi mejor amiga',
       start_url: '/',
       display: 'standalone',
