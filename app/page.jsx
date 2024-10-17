@@ -1,11 +1,19 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { useThemeColor } from "./ThemeColorContext";
 
 export default function Page() {
+  const setThemeColor = useThemeColor();
   const [overlayImage, setOverlayImage] = useState(null);
   const [isExiting, setIsExiting] = useState(false);
   const [pendingImage, setPendingImage] = useState(null);
+
+  useEffect(() => {
+    setThemeColor("#003366"); // Cambia este color según la pantalla
+
+    return () => clearTimeout(timer); // Limpia el temporizador al desmontar el componente
+  }, [setThemeColor]);
 
   useEffect(() => {
     if (overlayImage && pendingImage) {
