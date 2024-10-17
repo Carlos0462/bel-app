@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className="min-h-screen w-full flex flex-col"
         style={{
-          backgroundColor: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
+          background: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
         }}
       >
         {children}
