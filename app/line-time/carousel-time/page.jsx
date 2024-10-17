@@ -1,8 +1,9 @@
 "use client";
 import { useContext } from "react";
-import { ColorContext } from "../ColorContext";
+
 import { useEffect } from "react";
-import { useThemeColor } from "../ThemeColorContext";
+import { ColorContext } from "@/app/ColorContext";
+import { useThemeColor } from "@/app/ThemeColorContext";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -20,7 +21,7 @@ export default function Page() {
 
     return (
         <div className="w-full h-full " style={{ backgroundColor: color }}>
-
+HOLA
         </div>
     )
 

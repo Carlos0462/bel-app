@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useEffect } from "react";
-import { ColorContext } from "../ColorContext";
-import { useThemeColor } from "../ThemeColorContext";
+import { ColorContext } from "@/app/ColorContext";
+import { useThemeColor } from "@/app/ThemeColorContext";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
