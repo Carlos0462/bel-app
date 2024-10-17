@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 import { useThemeColor } from "./ThemeColorContext";
 
 export default function Page() {
-  const setThemeColor = useThemeColor();
+  /*   const setThemeColor = useThemeColor(); */
   const [overlayImage, setOverlayImage] = useState(null);
   const [isExiting, setIsExiting] = useState(false);
   const [pendingImage, setPendingImage] = useState(null);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     setThemeColor("#C4E7C2"); // Cambia este color según la pantalla
 
-  }, [setThemeColor]);
+  }, [setThemeColor]); */
 
   useEffect(() => {
     if (overlayImage && pendingImage) {
@@ -67,7 +67,12 @@ export default function Page() {
   ];
 
   return (
-    <div className="w-full h-full flex flex-row">
+    <div
+      className="w-full h-full flex flex-row"
+      style={{
+        background: "linear-gradient(90deg, #C2D5F0 50%, #32D827 50%)",
+      }}
+    >
       {images.map((image, index) => (
         <div key={index} className="w-1/2 h-full relative">
           <Image
